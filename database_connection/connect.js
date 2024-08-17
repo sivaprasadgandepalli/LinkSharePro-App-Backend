@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-
+require("dotenv").config();
 async function Connection() {
-    return await mongoose.connect("mongodb+srv://20mh1a0483:M9ihCjcIVE06t4Uk@cluster0.fspwj9t.mongodb.net/LinkshareApp");
+    return await mongoose.connect(process.env.MONGODB_URL);
 }
 
 module.exports = { Connection };
